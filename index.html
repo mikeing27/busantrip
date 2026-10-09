@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>釜山 7 天 6 夜 終極自由行手冊</title>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #f97316;
+      --accent-light: #ffedd5;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --border-light: #f1f5f9;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.07);
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 0 0 calc(40px + var(--safe-bottom)) 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Top App Bar Header */
+    .app-header {
+      background: linear-gradient(135deg, #0369a1 0%, #0284c7 60%, #38bdf8 100%);
+      color: white;
+      padding: calc(16px + var(--safe-top)) 16px 20px 16px;
+      border-bottom-left-radius: var(--radius-lg);
+      border-bottom-right-radius: var(--radius-lg);
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25);
+    }
+    .app-header h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .app-header p {
+      font-size: 13px;
+      opacity: 0.92;
+      font-weight: 400;
+    }
+    
+    /* Quick Stats Bar */
+    .header-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .chip {
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: white;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* iOS Sticky Navigation Bar */
+    .sticky-nav-wrapper {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 8px 12px;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .sticky-nav-wrapper::-webkit-scrollbar { display: none; }
+    .nav-pills {
+      display: inline-flex;
+      gap: 6px;
+    }
+    .nav-pill {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #475569;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.15s ease;
+      display: inline-block;
+    }
+    .nav-pill:active, .nav-pill.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
+    }
+
+    /* Main Container */
+    .main-content {
+      padding: 12px 14px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* Section Headers */
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 22px 0 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      scroll-margin-top: 56px;
+    }
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    /* iOS Cards */
+    .ios-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .ios-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .card-badge {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    .badge-blue { background: #e0f2fe; color: #0284c7; }
+    .badge-orange { background: #ffedd5; color: #ea580c; }
+    .badge-purple { background: #f3e8ff; color: #7e22ce; }
+    .badge-green { background: #dcfce7; color: #15803d; }
+    
+    /* Flight Ticket Cards */
+    .flight-ticket {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px solid #cbd5e1;
+      overflow: hidden;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .flight-header {
+      background: #f1f5f9;
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed #cbd5e1;
+    }
+    .passenger-name { font-size: 13.5px; font-weight: 700; color: #0f172a; }
+    .airline-tag { font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+    .tag-ci { background: #dbeafe; color: #1e40af; }
+    .tag-jx { background: #fef3c7; color: #92400e; }
+    .flight-body { padding: 14px; }
+    .flight-segment {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .flight-segment:last-child { margin-bottom: 0; padding-top: 10px; border-top: 1px solid #f1f5f9; }
+    .airport-block { flex: 1; }
+    .airport-code { font-size: 18px; font-weight: 800; color: #0f172a; }
+    .airport-time { font-size: 13px; font-weight: 700; color: #0284c7; }
+    .airport-term { font-size: 11.5px; color: var(--text-muted); }
+    .flight-arrow {
+      text-align: center;
+      padding: 0 10px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .flight-num {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #334155;
+    }
+    .baggage-row {
+      margin-top: 8px;
+      padding: 6px 10px;
+      background: #f8fafc;
+      border-radius: 6px;
+      font-size: 11.5px;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Hotel Card */
+    .hotel-card {
+      border-left: 4px solid var(--primary);
+    }
+    .hotel-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .hotel-meta {
+      font-size: 12.5px;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+    .address-box {
+      background: #f1f5f9;
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #1e293b;
+    }
+    .korean-addr {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 4px;
+      user-select: all;
+      -webkit-user-select: all;
+    }
+    .copy-hint {
+      font-size: 10.5px;
+      color: #0284c7;
+      margin-top: 4px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    /* Day Itinerary Timeline */
+    .day-section {
+      scroll-margin-top: 56px;
+      margin-bottom: 18px;
+    }
+    .day-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      margin-bottom: 10px;
+    }
+    .day-badge-large {
+      font-size: 13px;
+      font-weight: 800;
+      color: white;
+      background: var(--primary);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .day-banner-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-left: 8px;
+      flex: 1;
+    }
+    .day-banner-date {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Timeline Items */
+    .timeline-list {
+      position: relative;
+      padding-left: 18px;
+      border-left: 2px solid #e2e8f0;
+      margin-left: 8px;
+    }
+    .timeline-node {
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .timeline-node:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -23px;
+      top: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 3px white, 0 0 0 4px var(--primary);
+    }
+    .node-time {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-bottom: 3px;
+    }
+    .node-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+    .node-desc {
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .node-desc strong { color: #0f172a; }
+
+    /* Special Highlight Callout */
+    .highlight-card {
+      background: #fff7ed;
+      border-left: 4px solid #f97316;
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      margin-bottom: 12px;
+      font-size: 12.5px;
+    }
+    .highlight-card h4 {
+      font-size: 13.5px;
+      color: #9a3412;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .clinic-card {
+      background: #faf5ff;
+      border-left: 4px solid #a855f7;
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      margin-bottom: 12px;
+      font-size: 12.5px;
+    }
+    .clinic-card h4 {
+      font-size: 13.5px;
+      color: #6b21a8;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .clinic-links a {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #7e22ce;
+      background: #f3e8ff;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 6px;
+      margin-right: 6px;
+    }
+
+    /* Tag Pills */
+    .mini-tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-top: 4px;
+      margin-right: 4px;
+    }
+    .tag-flight { background: #e0e7ff; color: #3730a3; }
+    .tag-trans { background: #fef3c7; color: #92400e; }
+    .tag-food { background: #fee2e2; color: #991b1b; }
+    .tag-shop { background: #f3e8ff; color: #6b21a8; }
+    .tag-star { background: #dcfce7; color: #166534; }
+
+    /* Weather Block */
+    .weather-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+    .weather-box h3 { font-size: 15px; font-weight: 800; color: #1e3a8a; margin-bottom: 6px; }
+    .weather-grid-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 10px 0;
+    }
+    .w-item {
+      background: white;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+    }
+    .w-item strong { display: block; font-size: 11px; color: var(--text-muted); }
+
+    /* Compact Food Table */
+    .food-card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .food-item-row {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+    .food-area-badge {
+      font-size: 10px;
+      font-weight: 700;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 1px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .food-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .food-specialty {
+      font-size: 12.5px;
+      color: #475569;
+      margin-top: 2px;
+    }
+    .food-note {
+      font-size: 11.5px;
+      color: #e11d48;
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Hero Header -->
+  <header class="app-header">
+    <h1>✈️ 釜山 7 天 6 夜 行程手冊</h1>
+    <p>2026/10/22（四）～ 10/28（三）｜ 8 人同行・iPhone 最佳化手冊</p>
+    <div class="header-chips">
+      <span class="chip">🛫 華航 CI186/189</span>
+      <span class="chip">🌟 星宇 JX902/901</span>
+      <span class="chip">🏨 HOTEL GUESS WHO (廣安里)</span>
+      <span class="chip">🏨 釜山站華美達</span>
+      <span class="chip">🚠 天空膠囊 (10/25 12:00)</span>
+      <span class="chip">💆‍♀️ The First 皮膚科 (10/27)</span>
+    </div>
+  </header>
+
+  <!-- Sticky iPhone Day/Section Nav Bar -->
+  <div class="sticky-nav-wrapper">
+    <div class="nav-pills">
+      <a href="#section-flights" class="nav-pill">✈️ 機票航班</a>
+      <a href="#section-hotels" class="nav-pill">🏨 飯店住宿</a>
+      <a href="#day1" class="nav-pill">D1 10/22</a>
+      <a href="#day2" class="nav-pill">D2 10/23</a>
+      <a href="#day3" class="nav-pill">D3 10/24</a>
+      <a href="#day4" class="nav-pill">D4 10/25</a>
+      <a href="#day5" class="nav-pill">D5 10/26</a>
+      <a href="#day6" class="nav-pill">D6 10/27</a>
+      <a href="#day7" class="nav-pill">D7 10/28</a>
+      <a href="#section-food" class="nav-pill">🍽️ 美食清單</a>
+      <a href="#section-tips" class="nav-pill">💡 退稅與手續</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <!-- 航班機票詳細卡片 -->
+    <h2 id="section-flights" class="section-title">✈️ 成員航班與機票資訊</h2>
+    
+    <!-- 昱呈 華航卡片 -->
+    <div class="flight-ticket">
+      <div class="flight-header">
+        <span class="passenger-name">👤 昱呈</span>
+        <span class="airline-tag tag-ci">中華航空 China Airlines</span>
+      </div>
+      <div class="flight-body">
+        <div class="flight-segment">
+          <div class="airport-block">
+            <div class="airport-code">TPE 台北桃園</div>
+            <div class="airport-time">10/22 15:45</div>
+            <div class="airport-term">第一航廈 (T1)</div>
+          </div>
+          <div class="flight-arrow">
+            <span class="flight-num">CI186</span>
+            ➔
+          </div>
+          <div class="airport-block" style="text-align: right;">
+            <div class="airport-code">PUS 釜山金海</div>
+            <div class="airport-time">10/22 19:00</div>
+            <div class="airport-term">國際航廈</div>
+          </div>
+        </div>
+        <div class="flight-segment">
+          <div class="airport-block">
+            <div class="airport-code">PUS 釜山金海</div>
+            <div class="airport-time">10/28 11:50</div>
+            <div class="airport-term">國際航廈</div>
+          </div>
+          <div class="flight-arrow">
+            <span class="flight-num">CI189</span>
+            ➔
+          </div>
+          <div class="airport-block" style="text-align: right;">
+            <div class="airport-code">TPE 台北桃園</div>
+            <div class="airport-time">10/28 13:30</div>
+            <div class="airport-term">第一航廈 (T1)</div>
+          </div>
+        </div>
+        <div class="baggage-row">
+          🧳 <strong>免費託運行李</strong>：1 件，每件上限 23 公斤
+        </div>
+      </div>
+    </div>
+
+    <!-- Milly, Serena, Dory 星宇卡片 -->
+    <div class="flight-ticket">
+      <div class="flight-header">
+        <span class="passenger-name">👥 Milly, Serena, Dory (3人)</span>
+        <span class="airline-tag tag-jx">星宇航空 STARLUX Airlines</span>
+      </div>
+      <div class="flight-body">
+        <div class="flight-segment">
+          <div class="airport-block">
+            <div class="airport-code">TPE 台北桃園</div>
+            <div class="airport-time">10/22 14:45</div>
+            <div class="airport-term">第一航廈 (T1)</div>
+          </div>
+          <div class="flight-arrow">
+            <span class="flight-num">JX902</span>
+            ➔
+          </div>
+          <div class="airport-block" style="text-align: right;">
+            <div class="airport-code">PUS 釜山金海</div>
+            <div class="airport-time">10/22 17:55</div>
+            <div class="airport-term">國際航廈</div>
+          </div>
+        </div>
+        <div class="flight-segment">
+          <div class="airport-block">
+            <div class="airport-code">PUS 釜山金海</div>
+            <div class="airport-time">10/28 12:30</div>
+            <div class="airport-term">國際航廈</div>
+          </div>
+          <div class="flight-arrow">
+            <span class="flight-num">JX901</span>
+            ➔
+          </div>
+          <div class="airport-block" style="text-align: right;">
+            <div class="airport-code">TPE 台北桃園</div>
+            <div class="airport-time">10/28 14:15</div>
+            <div class="airport-term">第一航廈 (T1)</div>
+          </div>
+        </div>
+        <div class="baggage-row">
+          🧳 <strong>免費託運行李</strong>：1 件，每件上限 23 公斤
+        </div>
+      </div>
+    </div>
+
+    <!-- 飯店詳細資訊卡片 -->
+    <h2 id="section-hotels" class="section-title">🏨 住宿預訂與地址資訊</h2>
+    
+    <!-- 廣安里 HOTEL GUESS WHO -->
+    <div class="ios-card hotel-card">
+      <div class="ios-card-header">
+        <span class="card-badge badge-blue">前 2 晚・海景第一排</span>
+        <span style="font-size:12px;font-weight:700;color:#0284c7;">10/22 - 10/24</span>
+      </div>
+      <div class="hotel-title">HOTEL GUESS WHO (廣安里)</div>
+      <div class="hotel-meta">
+        <div>🔑 <strong>入住時間</strong>：2026/10/22 (四) <strong>15:00 後</strong>（當地時間）</div>
+        <div>🚪 <strong>退房時間</strong>：2026/10/24 (六) <strong>11:00 前</strong>（當地時間）</div>
+        <div>🛏️ <strong>預訂規格</strong>：2 間房・共 2 晚</div>
+      </div>
+      <div class="address-box">
+        <div><strong>📍 英文地址</strong>：181, Gwanganhaebyeon-ro, Suyeong-gu, 48303 Busan, Korea</div>
+        <div class="korean-addr">📍 韓文地址（叫車/地圖複製）：<br>부산광역시 수영구 광안해변로 181, 48303</div>
+        <span class="copy-hint">💡 手指長按上方韓文字即可全選複製，直接貼入 Kakao T / Naver Map！</span>
+      </div>
+    </div>
+
+    <!-- 釜山站華美達安可 -->
+    <div class="ios-card" style="border-left: 4px solid #8b5cf6;">
+      <div class="ios-card-header">
+        <span class="card-badge badge-purple">後 4 晚・交通大樞紐</span>
+        <span style="font-size:12px;font-weight:700;color:#7c3aed;">10/24 - 10/28</span>
+      </div>
+      <div class="hotel-title">釜山站溫德姆華美達安可飯店 (Ramada Encore)</div>
+      <div class="hotel-meta">
+        <div>🔑 <strong>入住退房</strong>：10/24 15:00 入住 ➔ 10/28 11:00 退房（共 4 晚）</div>
+        <div>📍 <strong>位置優勢</strong>：地鐵 1 號線「釜山站」6 號出口出站即達，KTX 釜山站正對面</div>
+      </div>
+      <div class="address-box">
+        <div class="korean-addr">📍 韓文地址：부산 동구 중앙대로 214번길 7-8</div>
+      </div>
+    </div>
+
+    <!-- 十月天氣指南 -->
+    <div class="weather-box">
+      <h3>🌦️ 釜山十月天氣與穿搭指南 (10/22 - 10/28)</h3>
+      <p style="font-size: 12.5px; color: #1e40af;">十月為釜山一年當中最乾爽舒適之秋季！白天氣溫約 20~22℃，夜間降至 12~14℃。市區溫和，但<strong>海邊強風極具威力</strong>。</p>
+      <div class="weather-grid-items">
+        <div class="w-item">
+          <strong>☀️ 白天穿著</strong>
+          長袖 T-shirt 或薄襯衫，體感舒適宜人
+        </div>
+        <div class="w-item">
+          <strong>🌆 晚上穿著</strong>
+          日落後迅速降溫，必備保暖外套
+        </div>
+        <div class="w-item">
+          <strong>🌊 海邊行程</strong>
+          海風強勁體感偏冷，務必加防風外層
+        </div>
+        <div class="w-item">
+          <strong>🎒 穿搭原則</strong>
+          標準「洋蔥式穿法」，早晚攜帶好收納外套
+        </div>
+      </div>
+    </div>
+
+    <!-- 逐日行程 -->
+    <h2 class="section-title">🗺️ 逐日詳細行程</h2>
+
+    <!-- Day 1 -->
+    <div id="day1" class="day-section">
+      <div class="day-banner">
+        <span class="day-badge-large">Day 1</span>
+        <span class="day-banner-title">抵達釜山・廣安里夜景開局</span>
+        <span class="day-banner-date">10/22（四）</span>
+      </div>
+      <div class="timeline-list">
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">17:55</div>
+          <div class="node-title">星宇 JX902 率先抵達金海機場</div>
+          <div class="node-desc">
+            Milly、Serena、Dory 降落國際航廈，辦理一般人工海關入境查驗與提領行李。<br>
+            ⚠️ <strong>SeS 申辦時效提醒</strong>：金海機場 2F SeS 辦理處平日營業至 18:00，因班機 17:55 著陸出關後已逾營業時間，<strong>安排於 Day 7 (10/28 週三) 返台出境前在 2F 申辦</strong>，當天出境立刻走 E-Gate 自動通關！
+          </div>
+          <span class="mini-tag tag-flight">星宇 JX902 (17:55)</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">18:30 - 19:00</div>
+          <div class="node-title">星宇組 Money Box 換匯 ＆ 候機大廳等候會合</div>
+          <div class="node-desc">出 Gate 3 過馬路至輕軌站旁 Money Box 機台完成外幣換匯，於機場大廳稍作休息等候華航組抵達。</div>
+          <span class="mini-tag tag-trans">機場等候會合</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">19:00 - 19:40</div>
+          <div class="node-title">華航 CI186 抵達金海機場 ＆ 全員會合</div>
+          <div class="node-desc">昱呈降落國際航廈，辦理入境通關並提領行李，出 Gate 3 至輕軌站旁 Money Box 機台換匯後全員順利會合！</div>
+          <span class="mini-tag tag-flight">華航 CI186 (19:00)</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">20:15 - 21:00</div>
+          <div class="node-title">叫計程車直奔廣安里【HOTEL GUESS WHO】</div>
+          <div class="node-desc">叫 7 人座 <strong>Kakao Venti</strong> 直接前往廣安里海景第一排飯店辦理入住放行李（預訂 2 間房）。<br>
+          地址：부산 수영구 광안해변로 181。</div>
+          <span class="mini-tag tag-trans">Kakao Venti 大車</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">21:15 - 23:00</div>
+          <div class="node-title">廣安里海濱散步 ＆ 消夜晚餐</div>
+          <div class="node-desc">
+            <strong>首選</strong>：【老宅邸 燒肉 올드맨션 (Old Mansion)】復古木質老宅炭火熟成黑豬肉（營業至 24:00）。<br>
+            <strong>備案</strong>：【Nasari 飯店 (Gwangan 店)】海鮮蔥煎餅、生牛肉烏龍麵，面海直擊廣安大橋夜景。
+          </div>
+          <span class="mini-tag tag-food">老宅邸燒肉 / Nasari</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div id="day2" class="day-section">
+      <div class="day-banner">
+        <span class="day-badge-large">Day 2</span>
+        <span class="day-banner-title">廣安悠閒・東釜山 Outlet 購物與超市採買</span>
+        <span class="day-banner-date">10/23（五）</span>
+      </div>
+      <div class="timeline-list">
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">09:30 - 10:45</div>
+          <div class="node-title">晨間漫步廣安沙灘 ＆ Mirukku 咖啡</div>
+          <div class="node-desc">至【Mirukku 咖啡 (釜山 Gwangan 店)】享用招牌濃縮奶油熔岩特調拿鐵與堅果厚乳咖啡。</div>
+          <span class="mini-tag tag-food">Mirukku 熔岩拿鐵</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">11:00 - 16:30</div>
+          <div class="node-title">前往【東釜山樂天 Premium Outlet & Lotte Mart】</div>
+          <div class="node-desc">
+            <strong>Outlet</strong>：主攻韓系潮牌、設計師服飾、戶外機能（Discovery、The North Face White Label 等），單筆滿 ₩15,000 即時/機台退稅。<br>
+            <strong>午餐</strong>：商場 3 樓美食街或戶外餐廳。<br>
+            <strong>Lotte Mart</strong>：採買零食泡麵、海苔酥與 Osulloc 蜂蜜雪梨茶。
+          </div>
+          <span class="mini-tag tag-shop">潮流選品 ＆ 超市採購</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">17:00 - 18:30</div>
+          <div class="node-title">搭車回廣安里飯店放置戰利品</div>
+          <div class="node-desc">大包小包送回 HOTEL GUESS WHO 存放，卸下重物輕鬆休息。</div>
+          <span class="mini-tag tag-trans">計程車回飯店</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">19:00 - 深夜</div>
+          <div class="node-title">廣安里海邊晚餐 ＆ 海景酒吧小酌</div>
+          <div class="node-desc">海濱特色料理晚餐，隨後挑選海景精釀酒吧小酌，享受悠閒廣安夜色。</div>
+          <span class="mini-tag tag-food">海景精釀小酌</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div id="day3" class="day-section">
+      <div class="day-banner">
+        <span class="day-badge-large">Day 3</span>
+        <span class="day-banner-title">影島文創散步・廣安里週六 21:00 無人機秀</span>
+        <span class="day-banner-date">10/24（六）</span>
+      </div>
+      <div class="timeline-list">
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">10:00 - 10:45</div>
+          <div class="node-title">退房 ➔ 行李送至【釜山站華美達安可飯店】寄存</div>
+          <div class="node-desc">HOTEL GUESS WHO 辦理退房（11:00 前），搭車將所有大件行李送至釜山站飯店大廳寄存。</div>
+          <span class="mini-tag tag-trans">行李樞紐轉移</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">11:00 - 13:00</div>
+          <div class="node-title">影島【白淺灘文化村】懸崖海岸步道</div>
+          <div class="node-desc">漫步白色懸崖步道，探訪彩色階梯、彩繪民房與天然海蝕洞打卡點。</div>
+          <span class="mini-tag tag-star">白淺灘懸崖</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">13:10 - 14:30</div>
+          <div class="node-title">懸崖階梯咖啡席【CAFE Age】</div>
+          <div class="node-desc">（原 Thrill on the mug）懸崖梯田劇場式座席，無死角飽覽全幅東海海景。</div>
+          <span class="mini-tag tag-food">CAFE Age 海景</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">14:45 - 16:15</div>
+          <div class="node-title">【Arte Museum 釜山】光影藝術展</div>
+          <div class="node-desc">沉浸式光影數位多媒體藝術展，包含官方授權 Miffy 主題展區。</div>
+          <span class="mini-tag tag-star">Arte 光影展</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">16:30 - 17:30</div>
+          <div class="node-title">世界冠軍咖啡【Momos Coffee 影島旗艦店】</div>
+          <div class="node-desc">舊船塢紅磚改造的冠軍烘豆廠，品嚐精品手沖（注意：<strong>18:00 準時打烊</strong>）。</div>
+          <span class="mini-tag tag-food">Momos 冠軍咖啡</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">18:00 - 19:00</div>
+          <div class="node-title">釜山站與新朋友會合 ➔ 搭車前往廣安里</div>
+          <div class="node-desc">新抵達的朋友於釜山站飯店寄存行李後，全員一同搭車前往廣安里。</div>
+          <span class="mini-tag tag-trans">全員會合</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">19:30 - 20:45</div>
+          <div class="node-title">廣安里海濱晚餐 ＆ All Sunday 烤貝果</div>
+          <div class="node-desc">海濱特色小吃，或外帶【All Sunday Bagel】手工烤貝果搭配特色抹醬。</div>
+          <span class="mini-tag tag-food">All Sunday Bagel</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">21:00 - 21:15</div>
+          <div class="node-title">沙灘欣賞週六限定【廣安里 M 無人機燈光秀】</div>
+          <div class="node-desc">沙灘現場欣賞 21:00 場次震撼展演（<strong>建議 20:40 前抵達沙灘就位</strong>）。</div>
+          <span class="mini-tag tag-star">週六 21:00 限定</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">21:40</div>
+          <div class="node-title">全員返回釜山站華美達安可飯店 Check-in</div>
+          <div class="node-desc">搭車返回釜山站飯店辦理入住手續，正式安頓休息。</div>
+          <span class="mini-tag tag-trans">返回釜山站</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div id="day4" class="day-section">
+      <div class="day-banner">
+        <span class="day-badge-large">Day 4</span>
+        <span class="day-banner-title">[全員同行] 天空膠囊・青沙浦烤貝・機張滑車・海理團路</span>
+        <span class="day-banner-date">10/25（日）</span>
+      </div>
+      
+      <!-- KKday Sky Capsule Card -->
+      <div class="highlight-card">
+        <h4>🎫 【已確認預約・KKday 天空膠囊列車憑證】</h4>
+        <div>• <strong>預約日期</strong>：2026-10-25（日）</div>
+        <div>• <strong>場次時間</strong>：<strong>12:00</strong>（請於 <strong>11:40</strong> 抵達尾浦站 2F 驗票）</div>
+        <div>• <strong>搭乘區間</strong>：尾浦站 (Mipo) ➔ 青沙浦站 (Cheongsapo)</div>
+        <div>• <strong>預約規格</strong>：<strong>膠囊 2 人座 × 4 張（共 4 輛車，全員 8 人分乘，每車 2 人）</strong></div>
+      </div>
+
+      <div class="timeline-list">
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">10:45 - 11:30</div>
+          <div class="node-title">搭車前往海雲台【尾浦站 (Mipo)】</div>
+          <div class="node-desc">釜山站門口叫 Kakao Venti 大車前往尾浦搭乘處，11:35 抵達上 2 樓候車。</div>
+          <span class="mini-tag tag-trans">Kakao Venti</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">11:40 - 12:35</div>
+          <div class="node-title">【確定預約】搭乘海雲台天空膠囊列車（12:00 場次）</div>
+          <div class="node-desc">出示 KKday QR Code 驗票登車，4 輛彩色獨立膠囊相繼出發，35 分鐘高空漫活看海直達青沙浦。</div>
+          <span class="mini-tag tag-star">高空膠囊海景</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">12:40 - 14:15</div>
+          <div class="node-title">青沙浦平交道 ＆ 現烤扇貝午餐 ＆ Diart 甜點</div>
+          <div class="node-desc">
+            <strong>打卡</strong>：出站 1 分鐘拍攝海景版灌籃高手平交道。<br>
+            <strong>烤貝</strong>：【道熙家烤扇貝】現烤起司扇貝與鮮活鮑魚。<br>
+            <strong>甜點</strong>：【Diart Coffee】招牌土耳其 Kaymak 凝脂水牛起司蜂蜜搭現烤脆皮麵包。
+          </div>
+          <span class="mini-tag tag-food">道熙家烤扇貝 ＆ Diart</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">14:30 - 16:30</div>
+          <div class="node-title">計程車前往機張【Skyline Luge 釜山斜坡滑車】</div>
+          <div class="node-desc">車程僅 15 分鐘直達，完美避開 13:00-14:00 檢修，全員操作滑車俯衝競速 2~3 回！</div>
+          <span class="mini-tag tag-star">Skyline Luge 競速</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">17:00 - 19:00</div>
+          <div class="node-title">返回海雲台【海理團路】文創散策</div>
+          <div class="node-desc">探訪文創選物小店（Duplit Market、Raw & Sweet），採買 Busan Bada Sand 焦糖餅與二代名菓堅果煎餅。</div>
+          <span class="mini-tag tag-shop">海理團路文創</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">19:00 - 21:00</div>
+          <div class="node-title">Puradak 炸雞內用 ＆ 海雲台傳統市場掃街</div>
+          <div class="node-desc">
+            <strong>炸雞</strong>：【Puradak 海雲台站店】店內現炸內用，享用 Black Alio 黑蒜脆皮炸雞。<br>
+            <strong>小吃</strong>：海雲台名品黑糖餅（堅果/起司）、尚國家飯捲（辣炒年糕、魚糕）。
+          </div>
+          <span class="mini-tag tag-food">Puradak 黑蒜炸雞 ＆ 黑糖餅</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div id="day5" class="day-section">
+      <div class="day-banner">
+        <span class="day-badge-large">Day 5</span>
+        <span class="day-banner-title">[全員同行] 甘川韓服・松島雲橋・札嘎其秋季蟹宴</span>
+        <span class="day-banner-date">10/26（一）</span>
+      </div>
+      <div class="timeline-list">
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">09:30 - 12:00</div>
+          <div class="node-title">【甘川洞文化村】彩繪山城 ＆ 韓服漫步</div>
+          <div class="node-desc">釜山站搭計程車約 15 分鐘直達，租借韓服漫步彩繪階梯，於「小王子與沙漠狐狸」遠眺海景。</div>
+          <span class="mini-tag tag-star">甘川洞韓服</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">12:30 - 15:30</div>
+          <div class="node-title">【松島海上纜車】水晶車廂 ＆【松島龍宮雲橋】</div>
+          <div class="node-desc">搭乘透明底水晶纜車跨海，漫步龍宮雲橋無柱懸空步道，感受浪花海風。</div>
+          <span class="mini-tag tag-star">松島水晶纜車 ＆ 龍宮雲橋</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">16:00 - 18:30</div>
+          <div class="node-title">南浦洞【札嘎其水產市場】秋季活蟹大餐</div>
+          <div class="node-desc">一樓挑選生猛松葉蟹/帝王蟹，二樓代客現蒸，必點香濃蟹膏海苔炒飯與鮮魚湯。</div>
+          <span class="mini-tag tag-food">現蒸松葉蟹 ＆ 蟹膏炒飯</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">18:30 - 21:00</div>
+          <div class="node-title">【富平罐頭市場】與【光復路時裝街】</div>
+          <div class="node-desc">品嚐 Milgot 爆漿艾草紅豆年糕麵包、BIFF 廣場元祖黑糖堅果糖餅，逛街採買。</div>
+          <span class="mini-tag tag-food">罐頭夜市 ＆ Milgot</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div id="day6" class="day-section">
+      <div class="day-banner">
+        <span class="day-badge-large">Day 6</span>
+        <span class="day-banner-title">[全員同行] 慶星大 The First 皮膚科・西面文創伴手禮</span>
+        <span class="day-banner-date">10/27（二）</span>
+      </div>
+
+      <!-- The First Dermatology Card -->
+      <div class="clinic-card">
+        <h4>💆‍♀️ 【預約醫美診所詳細資訊】</h4>
+        <div>• <strong>診所名稱</strong>：釜山 The First 專門醫皮膚科（더퍼스트피부과의원）</div>
+        <div>• <strong>交通位置</strong>：釜山地鐵 2 號線「慶星大學•釜慶大學站 (212)」<strong>6 號出口</strong> 即達（由釜山站搭計程車約 15-20 分鐘直達）</div>
+        <div>• <strong>療程內容</strong>：專門醫主治諮詢，皮膚管理、水光注射、雷射保養、緊緻拉提</div>
+        <div class="clinic-links">
+          <a href="https://www.instagram.com/thefirst.clinic" target="_blank">📷 Instagram @thefirst.clinic</a>
+          <a href="https://www.threads.com/@thefirst.clinic" target="_blank">🧵 Threads @thefirst.clinic</a>
+        </div>
+      </div>
+
+      <div class="timeline-list">
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">10:00 - 13:00</div>
+          <div class="node-title">慶星大【釜山 The First 專門醫皮膚科】專業療程</div>
+          <div class="node-desc">專門醫主治諮詢與預約保養療程。地鐵 2 號線「慶星大學•釜慶大學」6 號出口。</div>
+          <span class="mini-tag tag-star">專門醫皮膚科</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">13:00 - 13:30</div>
+          <div class="node-title">搭乘地鐵 2 號線直達【西面站】</div>
+          <div class="node-desc">自「慶星大學•釜慶大學站」搭乘 2 號線直達西面站（僅 5 站，車程約 10 分鐘），快速銜接下午行程。</div>
+          <span class="mini-tag tag-trans">地鐵 2 號線 10分鐘</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">13:30 - 14:30</div>
+          <div class="node-title">採買【hoduga-busan (호두가)】招牌核桃酥</div>
+          <div class="node-desc">造訪西面名店採購現烤安佳頂級無鹽奶油夾心白豆沙核桃酥，禮盒精緻（釜山鎮區釜田洞 502-2）。</div>
+          <span class="mini-tag tag-shop">hoduga 奶油核桃酥</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">14:30 - 17:30</div>
+          <div class="node-title">田浦咖啡選物街 ＆ Olive Young 西面旗艦店</div>
+          <div class="node-desc">
+            <strong>文創選物</strong>：Twin Étoile（布包卡片）、Object 西面店（設計道具）、Bracket Table（復古餐具）、Made By。<br>
+            <strong>美妝採買</strong>：Olive Young 西面旗艦店（單筆滿 ₩15,000 即時免稅退稅，採購麗珠蘭面膜、Torriden 玻尿酸）。
+          </div>
+          <span class="mini-tag tag-shop">田浦文創 ＆ 美妝免稅</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">18:00 - 20:30</div>
+          <div class="node-title">西面特色晚宴（二選一）</div>
+          <div class="node-desc">
+            <strong>選項 A</strong>：【코르 파스타 바 (cor pasta bar)】新鮮手工生義大利麵 Bar（需 CatchTable 預訂）。<br>
+            <strong>選項 B</strong>：【雪夜覓 (설야멱)】專業低溫慢速熟成特選豬肉，炭香脆皮。
+          </div>
+          <span class="mini-tag tag-food">西面名店晚宴</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div id="day7" class="day-section">
+      <div class="day-banner">
+        <span class="day-badge-large">Day 7</span>
+        <span class="day-banner-title">晨間熱湯・金海機場退稅・分批起飛返台</span>
+        <span class="day-banner-date">10/28（三）</span>
+      </div>
+      <div class="timeline-list">
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">08:00 - 08:45</div>
+          <div class="node-title">飯店周邊暖胃早餐（二選一）</div>
+          <div class="node-desc">
+            <strong>選項 A</strong>：【本錢豬肉湯飯 (Bonjeon)】清燉濃醇豬骨湯配白切肉。<br>
+            <strong>選項 B</strong>：【玄風雞絲刀切麵】濃郁雞湯手撕雞肉刀削麵配排骨餃子。
+          </div>
+          <span class="mini-tag tag-food">本錢豬肉湯飯 / 玄風雞湯麵</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">08:50 - 09:25</div>
+          <div class="node-title">辦理退房，全員搭計程車前往金海機場</div>
+          <div class="node-desc">辦理退房手續，搭乘計程車直奔金海國際機場（車程約 35 分鐘），09:25 抵達國際航廈。</div>
+          <span class="mini-tag tag-trans">直奔金海機場</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">09:30 - 10:00</div>
+          <div class="node-title">【全員申辦】SeS 快速自動通關 ＆ 機場退稅</div>
+          <div class="node-desc">
+            1. <strong>申辦 SeS 自動通關</strong>：國際線 2 樓出境大廳 C1 櫃檯旁「出國事務科」（09:00 開門），免填表、出示護照、按壓指紋與臉部拍照，2~3 分鐘領取貼紙，<strong>本次出境立即走自動通關閘門</strong>！<br>
+            2. <strong>退稅掃描</strong>：2 樓 B24 旁 KIOSK 機台掃描退稅單條碼（單筆稅額滿 ₩75,000 先至海關核驗蓋章）。
+          </div>
+          <span class="mini-tag tag-star">SeS 申辦 ＆ 退稅</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">10:00 - 11:20</div>
+          <div class="node-title">行李託運、E-Gate 自動通關 ＆ 領現提貨</div>
+          <div class="node-desc">
+            1. 各航空公司櫃檯託運行李（免費託運 1 件 23kg）。<br>
+            2. 憑剛辦好的 SeS 走 E-Gate 自動通關閘門快速過海關。<br>
+            3. 通過安檢至 Gate 4 斜對面領取退稅現金，並至免稅提貨處領取市區預購品。
+          </div>
+          <span class="mini-tag tag-star">E-Gate 自動出境</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">11:50 - 13:30</div>
+          <div class="node-title">華航 CI189 起飛（昱呈）</div>
+          <div class="node-desc">11:50 釜山金海起飛，預計 13:30 返抵台北桃園第一航廈 (T1)。</div>
+          <span class="mini-tag tag-flight">華航 CI189 (11:50)</span>
+        </div>
+        <div class="timeline-node">
+          <div class="timeline-dot"></div>
+          <div class="node-time">12:30 - 14:15</div>
+          <div class="node-title">星宇 JX901 起飛（Milly, Serena, Dory）</div>
+          <div class="node-desc">12:30 釜山金海起飛，預計 14:15 返抵台北桃園第一航廈 (T1)。</div>
+          <span class="mini-tag tag-flight">星宇 JX901 (12:30)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 美食清單 -->
+    <h2 id="section-food" class="section-title">🍽️ 精選美食與候選餐廳</h2>
+    <div class="food-card-list">
+      <div class="food-item-row">
+        <span class="food-area-badge">廣安里</span>
+        <div class="food-name">老宅邸 燒肉 올드맨션 (Old Mansion)</div>
+        <div class="food-specialty">炭火熟成黑豬肉、懷舊木質老宅氛圍（營業至 24:00）</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">廣安里</span>
+        <div class="food-name">Nasari 飯店 (Gwangan 店)</div>
+        <div class="food-specialty">鮮蝦青蔥煎餅、海鮮刀削麵、生牛肉涼拌烏龍麵（直擊廣安大橋夜景）</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">廣安里</span>
+        <div class="food-name">All Sunday Bagel</div>
+        <div class="food-specialty">炭烤手工貝果、多款特調乳酪抹醬（10:00-21:30，適合外帶）</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">廣安里</span>
+        <div class="food-name">Mirukku 咖啡 (Gwangan 店)</div>
+        <div class="food-specialty">招牌濃縮熔岩奶油拿鐵、堅果厚乳咖啡</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">青沙浦/海雲台</span>
+        <div class="food-name">道熙家烤扇貝 / 烤貝一條街</div>
+        <div class="food-specialty">現烤起司扇貝、鮮烤活鮑魚、活章魚（面海景觀第一排）</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">青沙浦/海雲台</span>
+        <div class="food-name">Diart Coffee (디아트 커피)</div>
+        <div class="food-specialty">土耳其 Kaymak 凝脂水牛起司蜂蜜搭現烤脆皮麵包（每日限量供應）</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">青沙浦/海雲台</span>
+        <div class="food-name">Puradak Chicken (海雲台站店)</div>
+        <div class="food-specialty">Black Alio 黑蒜脆皮炸雞、辣椒美乃滋炸雞（店內現炸內用）</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">影島</span>
+        <div class="food-name">CAFE Age (原 Thrill on the mug)</div>
+        <div class="food-specialty">懸崖梯田式觀景座席、全幅落地窗無敵海景</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">影島</span>
+        <div class="food-name">Momos Coffee (影島 Roastery 旗艦店)</div>
+        <div class="food-specialty">世界冠軍精品手沖單品豆、舊船塢紅磚改造（注意 18:00 準時打烊）</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">西面/田浦</span>
+        <div class="food-name">코르 파스타 바 (cor pasta bar)</div>
+        <div class="food-specialty">每日新鮮自製生義大利麵 Bar（需提早透過 CatchTable 預訂席位）</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">西面/田浦</span>
+        <div class="food-name">雪夜覓 (설야멱)</div>
+        <div class="food-specialty">專業級低溫慢速熟成特選豬肉、特殊烤網炭香脆皮</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">西面/田浦</span>
+        <div class="food-name">hoduga-busan (호두가)</div>
+        <div class="food-specialty">安佳頂級奶油夾心白豆沙現烤核桃酥（釜山鎮區釜田洞 502-2）</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">釜山站周邊</span>
+        <div class="food-name">本錢豬肉湯飯 (Bonjeon)</div>
+        <div class="food-specialty">湯頭清爽回甘、白切肉片極為細嫩（釜山站 6 號出口名店）</div>
+      </div>
+      <div class="food-item-row">
+        <span class="food-area-badge">釜山站周邊</span>
+        <div class="food-name">玄風雞絲刀切麵 (釜山站店)</div>
+        <div class="food-specialty">濃醇雞骨白湯、手撕雞肉、排骨肉餃子</div>
+      </div>
+    </div>
+
+    <!-- 退稅與重要備忘 -->
+    <h2 id="section-tips" class="section-title">💡 通關、換匯與退稅實務</h2>
+    <div class="ios-card">
+      <div style="margin-bottom: 12px;">
+        <span class="card-badge badge-green">⚡ 韓國 SeS 自動通關申辦全指南</span>
+        <div style="font-size:12.5px;color:#334155;margin-top:6px;line-height:1.5;">
+          <strong>• 申請資格</strong>：年滿 17 歲、持有效中華民國晶片護照（效期 6 個月以上）、訪韓無不良紀錄。<br>
+          <strong>• 金海申辦處</strong>：國際線航廈 2 樓出境大廳最左側（C1 報到櫃檯旁藍色招牌「出國事務科 / 출국사무과」）。<br>
+          <strong>• 服務時間</strong>：平日 09:00 - 18:00（12:00 - 13:00 午休），週末例假日不營業。<br>
+          <strong>• 現場申辦步驟（約 2~3 分鐘）</strong>：
+          <ol style="margin-left:18px;margin-top:4px;">
+            <li>推門進入辦公室，將晶片護照交給承辦官員（免填任何紙本表格）。</li>
+            <li>依指示在掃描機上按壓雙手食指指紋。</li>
+            <li>脫下口罩、帽子與眼鏡，注視鏡頭進行臉部辨識拍照。</li>
+            <li>官員審核後於護照內頁貼上 SeS 註冊貼紙，即刻完成！</li>
+          </ol>
+          <strong>• 通關使用方法</strong>：通關時走「Auto Gate」，先將護照照片頁朝下置於掃描台 ➔ 閘門開啟後往前走至腳印處 ➔ 注視螢幕臉部辨識並按壓指紋 ➔ 閘門開啟即完成通關。效期與護照同，未來訪韓皆可直接走自動通道！
+        </div>
+      </div>
+      <div style="margin-bottom: 10px; padding-top: 8px; border-top: 1px solid var(--border-light);">
+        <span class="card-badge badge-blue">🏧 Money Box 換匯</span>
+        <p style="font-size:12.5px;color:#334155;margin-top:4px;">機場 1F Gate 3 出口過馬路往輕軌站方向，入口旁即為 Money Box 自動機台，24 小時支援台幣現鈔直接換韓元，匯率優於航廈銀行。</p>
+      </div>
+      <div style="padding-top: 8px; border-top: 1px solid var(--border-light);">
+        <span class="card-badge badge-orange">🛍️ 機場退稅 (₩75,000分水嶺)</span>
+        <p style="font-size:12.5px;color:#334155;margin-top:4px;">單筆退稅額超過 <strong>₩75,000</strong> 或機台標記需檢查者，商品切勿托運，需至海關櫃台蓋章後再托運；通過安檢後至 Gate 4 斜對面領取現金。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>🌊 釜山 7 天 6 夜 終極自由行手冊 ｜ iPhone 最佳化介面 ✈️</p>
+  </footer>
+
+  <script>
+    // Simple active pill highlight on scroll
+    const sections = document.querySelectorAll('h2[id], div[id^="day"]');
+    const navPills = document.querySelectorAll('.nav-pill');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        const top = sec.offsetTop;
+        if (pageYOffset >= top - 100) {
+          current = sec.getAttribute('id');
+        }
+      });
+      navPills.forEach(pill => {
+        pill.classList.remove('active');
+        if (pill.getAttribute('href') === '#' + current) {
+          pill.classList.add('active');
+          pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      });
+    }, { passive: true });
+  </script>
+</body>
+</html>
